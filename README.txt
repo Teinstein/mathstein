@@ -1,1 +1,0 @@
-This is a library coded in Python which helps users to solve various equations and return the roots.
