@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
+
 import numpy as np
 
 def OneVarSolver(lin_equation) :
