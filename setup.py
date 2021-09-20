@@ -24,7 +24,7 @@ setup(
   author_email='',
   license='MIT', 
   classifiers=classifiers,
-  keywords='equation_solver', 
+  keywords='mathstein', 
   packages=find_packages(),
   install_requires=[] 
 )
