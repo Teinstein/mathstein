@@ -17,7 +17,7 @@ classifiers = [
 setup(
   name='mathstein',
   version='0.0.1',
-  description='An equation solver',
+  description='It is a comprehensive mathematical library',
   long_description=open('README.txt').read() + '\n\n' + open('changelog.txt').read(),
   url='',  
   author='Teinstein Education',
@@ -26,7 +26,7 @@ setup(
   classifiers=classifiers,
   keywords='equation_solver', 
   packages=find_packages(),
-  install_requires=['numpy'] 
+  install_requires=[] 
 )
 
 
