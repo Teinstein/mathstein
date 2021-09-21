@@ -5,7 +5,106 @@
 
 
 
+import math
 import numpy as np
+import matplotlib.pyplot as plt
+
+def graphgen(coeff):
+    x = np.linspace(-10, 10, 1000)
+    y=0
+    degree=len(coeff)-1
+    #graph of a quadratic polynomial
+    if degree==3:
+        a,b,c,d=coeff
+        c=c-d
+        y=a*(x**2)+b*x+c
+        fig, ax = plt.subplots()
+        ax.plot(x, y)
+        return
+    #graph of a cubic polynomial
+    elif degree==4:
+        a,b,c,d,e=coeff
+        d=d-e
+        y=a*(x**3)+b*(x**2)+c*x+d
+        fig, ax = plt.subplots()
+        ax.plot(x, y)
+        return
+    #graph of a biquadratic polynomial
+    else:
+        a,b,c,d,e,f=coeff
+        e=e-f
+        y=a*(x**4)+b*(x**3)+c*(x**2)+d*x+e
+        fig, ax = plt.subplots()
+        ax.plot(x, y)
+        return   
+      
+def quadraticsolver(coeff):
+"""Coefficients should be entered as (a,b,c,d)
+ hence making the polynomial a*x^2+b*x^1+c=d"""
+    if a==0:
+        return "Invalid equation"
+    d=b*b-4*a*c
+    discrimi=math.sqrt(abs(d))#FInding the discriminant
+    #based on the discriminant checking if solution exist or not
+    if d > 0:
+        r1=(-b + discrimi)/(2 * a)
+        r2=(-b - discrimi)/(2 * a)
+        return r1,r2
+    elif d == 0:
+        return -b / (2*a)
+    else:  
+        return "No real root possible"
+    
+def accessory_cubic(A, B, C, D, x) :
+ 
+    ans = 0
+ 
+    # Find the value equation at x
+    ans = (A * x * x * x +
+           B * x * x + C * x + D)
+ 
+    # Return the value of ans
+    return ans
+ 
+
+def cubicsolver(coeff) :
+ """Coefficients should be entered as (a,b,c,d,e)
+ hence making the polynomial a*x^3+b*x^2+c*x+d=e"""
+    # Initialise start and end
+    A, B, C, D, E=coeff
+    start = 0 
+    end = 100000
+ 
+    mid = 0
+    ans = 0
+ 
+    # Implement Binary Search
+    while (start <= end) :
+ 
+        # Find mid
+        mid = start + (end - start) // 2
+ 
+        # Find the value of f(x) using
+        # current mid
+        ans = accessorycubic(A, B, C, D, mid)
+ 
+        # Check if current mid satisfy
+        # the equation
+        if (ans == E) :
+ 
+            # Print mid and return
+            print(mid)
+            return;
+ 
+        if (ans < E) :
+            start = mid + 1
+        else :
+            end = mid - 1
+ 
+    # Print "No real root possible" if not found
+    # any integral solution
+    print("No real root possible")
+    
 
 def OneVarSolver(lin_equation) :
   
