@@ -41,16 +41,18 @@ def graphgen(coeff):
 def quadraticsolver(coeff):
 """Coefficients should be entered as (a,b,c,d)
  hence making the polynomial a*x^2+b*x^1+c=d"""
+   a,b,c,d=coeff
+    c=c-d
     if a==0:
         return "Invalid equation"
-    d=b*b-4*a*c
-    discrimi=math.sqrt(abs(d))#FInding the discriminant
+    dis=b*b-4*a*c
+    discrimi=math.sqrt(abs(dis))#FInding the discriminant
     #based on the discriminant checking if solution exist or not
-    if d > 0:
+    if dis > 0:
         r1=(-b + discrimi)/(2 * a)
         r2=(-b - discrimi)/(2 * a)
         return r1,r2
-    elif d == 0:
+    elif dis == 0:
         return -b / (2*a)
     else:  
         return "No real root possible"
