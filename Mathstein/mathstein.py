@@ -88,15 +88,14 @@ def cubicsolver(coeff) :
  
         # Find the value of f(x) using
         # current mid
-        ans = accessorycubic(A, B, C, D, mid)
+        ans = accessory_cubic(A, B, C, D, mid)
  
         # Check if current mid satisfy
         # the equation
         if (ans == E) :
  
             # Print mid and return
-            print(mid)
-            return;
+            return mid
  
         if (ans < E) :
             start = mid + 1
@@ -105,7 +104,7 @@ def cubicsolver(coeff) :
  
     # Print "No real root possible" if not found
     # any integral solution
-    print("No real root possible")
+    return "No real root possible"
     
 
 def OneVarSolver(lin_equation) :
