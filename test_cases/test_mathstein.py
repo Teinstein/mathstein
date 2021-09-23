@@ -16,6 +16,16 @@ class TestMathstein(unittest.TestCase):
         self.assertEqual(result1,[-1.0,-4.0])
         result2=mathstein.MultiVarSolver(['2x + y = 2','4x + 2y = -8'],2)
         self.assertEqual(result2,"No solution possible")
+    def test_quadraticsolver(self):
+        result1=mathstein.quadraticsolver((1,0,-4,0))
+        self.assertEqual(result1,(2.0,-2.0))
+        result2=mathstein.quadraticsolver((1,0,4,0))
+        self.assertEqual(result2,"No real root possible")
+    def test_cubicsolver(self):
+        result1=mathstein.cubicsolver((1,0,0,-27,0))
+        self.assertEqual(result1,3)
+        result2=mathstein.cubicsolver((1,0,0,27,0))
+        self.assertEqual(result2,"No real root possible")
 
 if __name__=='__main__':
     unittest.main()
