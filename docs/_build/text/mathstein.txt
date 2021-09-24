@@ -1,0 +1,18 @@
+mathstein module
+****************
+
+mathstein.MultiVarSolver(equations, n)
+
+mathstein.OneVarSolver(lin_equation)
+
+mathstein.accessory_cubic(A, B, C, D, x)
+
+mathstein.coeffgen(eqn, degree)
+
+mathstein.cubicsolver(coeff)
+
+mathstein.get_index(d, c)
+
+mathstein.graphgen(coeff)
+
+mathstein.quadraticsolver(coeff)
