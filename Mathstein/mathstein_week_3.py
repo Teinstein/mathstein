@@ -30,19 +30,6 @@ def areacalculator(function,limits):
         x=x+dx
     return A
 
-print(areacalculator("x**3",[1,2]))
-areadisplay("x**3",[1,2])
-
-
-# In[12]:
-
-
-"""Coefficients should be entered as (a,b,c,d,e)
- hence making the polynomial a*x^3+b*x^2+c*x+d=e"""
-
-
-# In[ ]:
-
 
 
 
