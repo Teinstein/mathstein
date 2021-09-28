@@ -9,6 +9,29 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+def f(function,x):
+    y=eval(function)
+    return y
+
+def areadisplay(function,limits):
+    x=np.linspace(-10,10,1000)
+    plt.plot(x,f(function,x))
+    plt.axhline(color="black")
+    plt.fill_between(x,f(function,x),where=[(x>limits[0]) and (x<limits[1]) for x in x])
+    
+def areacalculator(function,limits):
+    x1=limits[0]
+    x2=limits[1]
+    N=1000
+    dx=(x2-x1)/N
+    A=0
+    x=x1
+    while x<=x2:
+        dA=f(function,x)*dx
+        A=A+dA
+        x=x+dx
+    return A
+
 def graphgen(coeff):
     x = np.linspace(-10, 10, 1000)
     y=0
@@ -153,8 +176,6 @@ def accesory_biquadratic2(a0, b0, c0, d0):
         return S_plus_U - a13
     
 def biquadraticsolver(coeff):
-   """Coefficients should be entered as (a,b,c,d,e,f)
- hence making the polynomial a*x^4+b*x^3+c*x^2+d*x+e=f"""
     a0,b0,c0,d0,e0,f0=coeff
     e0=e0-f0
     a, b, c, d = b0/a0, c0/a0, d0/a0, e0/a0
