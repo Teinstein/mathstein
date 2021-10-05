@@ -1,26 +1,24 @@
 Mathstein Library
 It is a comprehensive mathematical library.
 
-For more information regarding the library and the tech used, view the project initiation report, https://docs.google.com/document/d/1Dk4yudvDK3usb3OyoYYEHR77Hj99lypwsUJVXQLax1o/edit
+For more information regarding the library and the tech used, view the project initiation report, https://docs.google.com/document/d/1Dk4yudvDK3usb3OyoYYEHR77Hj99lypwsUJVXQLax1o/edit 
 
 Directory Setup
-•Mathstein
-•docs
-•test_cases
-•LICENSE.txt
-•README.txt
-•changelog.txt
-•setup.py
-
-
+•	Mathstein
+•	docs
+•	test_cases
+•	LICENSE.txt
+•	README.txt
+•	changelog.txt
+•	setup.py
 
 Mathstein 
 This directory consists of the main functionality of our library.
-Components of the this directory are:
-•It has a file with all the major functionality, named as mathstein.py. The mathstein.py is further subcategorized into sections, each implying the functionality added every week.
-•mathstein_week_1.py contains the functionality for a one variable solver and a multi variable solver.
-•mathstein_week_2.py contains the functionality for a quadratic solver, a cubic solver and a bi quadratic solver and also helps generating the graphs for the same.
-•mathstein_week_3.py contains the functionality for calculating area under a straight line and a curve and also gives a visual representation of how the area under a line or a curve would look.
+Components of this directory are:
+•	It has a file with all the major functionality, named as mathstein.py. The mathstein.py is further subcategorized into sections, each implying the functionality added every week.
+•	mathstein_week_1.py contains the functionality for a one variable solver and a multi variable solver.
+•	mathstein_week_2.py contains the functionality for a quadratic solver, a cubic solver and a bi quadratic solver and also helps generating the graphs for the same.
+•	mathstein_week_3.py contains the functionality for calculating area under a straight line and a curve and also gives a visual representation of how the area under a line or a curve would look.
 
 
 test_cases
