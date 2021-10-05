@@ -4,6 +4,7 @@ It is a comprehensive mathematical library.
 For more information regarding the library and the tech used, view the project initiation report, https://docs.google.com/document/d/1Dk4yudvDK3usb3OyoYYEHR77Hj99lypwsUJVXQLax1o/edit 
 
 Directory Setup
+
 •	Mathstein
 •	docs
 •	test_cases
