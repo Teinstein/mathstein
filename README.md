@@ -8,7 +8,7 @@ Directory Setup
 •	docs
 •	test_cases
 •	LICENSE.txt
-•	README.txt
+•	README.md
 •	changelog.txt
 •	setup.py
 
