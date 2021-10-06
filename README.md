@@ -24,7 +24,7 @@ Components of this directory are:
 * matheqn.py contains the functionality for a one variable solver and a multi variable solver.
 * mathroot.py contains the functionality for a quadratic solver, a cubic solver and a bi quadratic solver and also helps generating the graphs for the same.
 * matharea.py contains the functionality for calculating area under a straight line and a curve and also gives a visual representation of how the area under a line or a curve would look.
-
+* mathmatcalc.py contains the functionality for calculating various operations on matrices includind addition, subtraction, multiplication and finding determinant.
 
 ## test_cases
 This direcctory consists of all the test cases for the files present in the Mathstein directory. The test cases have been designed using the unittest module.
