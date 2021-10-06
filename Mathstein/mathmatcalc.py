@@ -76,6 +76,12 @@ def copy_matrix(M):
     return MC
 
 def matdeterminant(A, det=0):
+     """
+    Find determinant of a square matrix using full recursion
+        :param A: the matrix to find the determinant for
+        :param total=0: safely establish a total at each recursion level
+        :returns: the running total for the levels of recursion
+    """
     indices = list(range(len(A)))
     if len(A) == 2 and len(A[0]) == 2:
         val = A[0][0] * A[1][1] - A[1][0] * A[0][1]
