@@ -98,7 +98,7 @@ def matdeterminant(A, det=0):
         sub_det = matdeterminant(As)
         det += sign * A[0][fc] * sub_det 
  
-    return total
+    return det
 
 
 # In[ ]:
