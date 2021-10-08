@@ -5,7 +5,8 @@
 
 
 import unittest
-import matheqn
+import context
+import Mathstein.matheqn as matheqn
 
 
 class TestMathstein(unittest.TestCase):
