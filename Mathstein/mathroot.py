@@ -9,6 +9,11 @@ import numpy as np
 
 
 def graphgen(coeff):
+   """
+    Generates a graph for any given equation
+        :param coeff: list of all the coefficients of an equation
+        :return: Graph object plotted based on the equation
+   """
     x = np.linspace(-10, 10, 1000)
     y=0
     degree=len(coeff)-1
@@ -38,13 +43,17 @@ def graphgen(coeff):
         return   
       
 def quadraticsolver(coeff):
+  """
+    Solves a quadratic equation
+        :param coeff: list of all the coefficients of an equation
+        :return: Roots of the equation
+  """
     a,b,c,d=coeff
     c=c-d
     if a==0:
         return "Invalid equation"
     dis=b*b-4*a*c
-    discrimi=math.sqrt(abs(dis))#FInding the discriminant
-    #based on the discriminant checking if solution exist or not
+    discrimi=math.sqrt(abs(dis))
     if dis > 0:
         r1=(-b + discrimi)/(2 * a)
         r2=(-b - discrimi)/(2 * a)
@@ -55,7 +64,12 @@ def quadraticsolver(coeff):
         return "No real root possible"
     
 def cubicsolver(coeff) :
-    # Initialise start and end
+  """
+    Solves a cubic equation
+        :param coeff: list of all the coefficients of an equation
+        :return: Roots of the equation
+  """
+    
     A, B, C, D, E=coeff
     start = 0 
     end = 100000
@@ -63,21 +77,19 @@ def cubicsolver(coeff) :
     mid = 0
     ans = 0
  
-    # Implement Binary Search
+    
     while (start <= end) :
  
         # Find mid
         mid = start + (end - start) // 2
  
-        # Find the value of f(x) using
-        # current mid
+        
         ans = accessory_cubic(A, B, C, D, mid)
  
-        # Check if current mid satisfy
-        # the equation
+        
         if (ans == E) :
  
-            # Print mid and return
+            
             return mid
  
         if (ans < E) :
@@ -85,8 +97,7 @@ def cubicsolver(coeff) :
         else :
             end = mid - 1
  
-    # Print "No real root possible" if not found
-    # any integral solution
+    
     return "No real root possible"
 
     
@@ -94,23 +105,23 @@ def accessory_cubic(A, B, C, D, x) :
  
     ans = 0
  
-    # Find the value equation at x
+    
     ans = (A * x * x * x +
            B * x * x + C * x + D)
  
-    # Return the value of ans
+    
     return ans
 
 
 def accesory_biquadratic1(a0, b0, c0):
     a, b = b0 / a0, c0 / a0
 
-    # Some repating variables
+    
     a0 = -0.5*a
     delta = a0*a0 - b
     sqrt_delta = cmath.sqrt(delta)
 
-    # Roots
+    
     r1 = a0 - sqrt_delta
     r2 = a0 + sqrt_delta
 
@@ -120,12 +131,12 @@ def accesory_biquadratic1(a0, b0, c0):
 def accesory_biquadratic2(a0, b0, c0, d0):
     a, b, c = b0 / a0, c0 / a0, d0 / a0
 
-    # Some repeating constants and variables
+    
     third = 1./3.
     a13 = a*third
     a2 = a13*a13
 
-    # Additional intermediate variables
+    
     f = third*b - a2
     g = a13 * (2*a2 - b) + c
     h = 0.25*g*g + f*f*f
@@ -153,30 +164,35 @@ def accesory_biquadratic2(a0, b0, c0, d0):
         return S_plus_U - a13
     
 def biquadraticsolver(coeff):
+  """
+    Solves a biquadratic equation
+        :param coeff: list of all the coefficients of an equation
+        :return: Roots of the equation
+  """
     a0,b0,c0,d0,e0,f0=coeff
     e0=e0-f0
     a, b, c, d = b0/a0, c0/a0, d0/a0, e0/a0
 
-    # Some repeating variables
+    
     a0 = 0.25*a
     a02 = a0*a0
 
-    # Coefficients of subsidiary cubic euqtion
+    
     p = 3*a02 - 0.5*b
     q = a*a02 - b*a0 + 0.5*c
     r = 3*a02*a02 - b*a02 + c*a0 - d
 
-    # One root of the cubic equation
+    
     z0 = accesory_biquadratic2(1, p, r, p*r - 0.5*q*q)
 
-    # Additional variables
+    
     s = cmath.sqrt(2*p + 2*z0.real + 0j)
     if s == 0:
         t = z0*z0 + r
     else:
         t = -q / s
 
-    # Compute roots by quadratic equations
+    
     r0, r1 = accesory_biquadratic1(1, s, z0 + t)
     r2, r3 = accesory_biquadratic1(1, -s, z0 - t)
 
