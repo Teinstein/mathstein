@@ -9,11 +9,11 @@ import numpy as np
 
 
 def graphgen(coeff):
-   """
+    """
     Generates a graph for any given equation
         :param coeff: list of all the coefficients of an equation
         :return: Graph object plotted based on the equation
-   """
+    """
     x = np.linspace(-10, 10, 1000)
     y=0
     degree=len(coeff)-1
@@ -43,11 +43,11 @@ def graphgen(coeff):
         return   
       
 def quadraticsolver(coeff):
-  """
+    """
     Solves a quadratic equation
         :param coeff: list of all the coefficients of an equation
         :return: Roots of the equation
-  """
+    """
     a,b,c,d=coeff
     c=c-d
     if a==0:
@@ -64,11 +64,11 @@ def quadraticsolver(coeff):
         return "No real root possible"
     
 def cubicsolver(coeff) :
-  """
+    """
     Solves a cubic equation
         :param coeff: list of all the coefficients of an equation
         :return: Roots of the equation
-  """
+    """
     
     A, B, C, D, E=coeff
     start = 0 
@@ -164,11 +164,11 @@ def accesory_biquadratic2(a0, b0, c0, d0):
         return S_plus_U - a13
     
 def biquadraticsolver(coeff):
-  """
+    """
     Solves a biquadratic equation
         :param coeff: list of all the coefficients of an equation
         :return: Roots of the equation
-  """
+    """
     a0,b0,c0,d0,e0,f0=coeff
     e0=e0-f0
     a, b, c, d = b0/a0, c0/a0, d0/a0, e0/a0
