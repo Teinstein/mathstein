@@ -5,7 +5,9 @@
 
 
 import unittest
-import matharea
+import context
+import Mathstein.matharea as matharea
+
 
 
 class TestMathstein(unittest.TestCase):
