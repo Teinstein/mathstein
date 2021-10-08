@@ -10,11 +10,11 @@ import matplotlib.pyplot as plt
 
 
 def OneVarSolver(lin_equation) :
-  """
-  Solves single variable linear equation
+    """
+    Solves single variable linear equation
         :param lin_equation: linear equation with single variable in the form of a string
         :return: Solution of the equation
-  """
+    """
     len_of_eqn = len(lin_equation)  
     sign = 1
     coeff = 0
@@ -143,12 +143,12 @@ def coeffgen(eqn,degree):
     return mat
             
 def MultiVarSolver(equations,n):
-  """
-  Solves multiple linear equation with n variables
+    """
+    Solves multiple linear equation with n variables
         :param equations: list of multiple linear equations
         :param n: Number of equations/ Number of unknowns
         :return: Solution of these equations
-  """
+    """
     resultant= coeffgen(equations,n)
     A=[]
     B=[]
