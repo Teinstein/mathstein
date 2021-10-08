@@ -10,13 +10,16 @@ import matplotlib.pyplot as plt
 
 
 def OneVarSolver(lin_equation) :
-  
+  """
+  Solves single variable linear equation
+        :param lin_equation: linear equation with single variable in the form of a string
+        :return: Solution of the equation
+  """
     len_of_eqn = len(lin_equation)  
     sign = 1
     coeff = 0
     total = 0
     i = 0  
-    # Traverse the equation
     for j in range(0, len_of_eqn) :
       
         if (lin_equation[j] == '+' or lin_equation[j] == '-') :
@@ -24,8 +27,7 @@ def OneVarSolver(lin_equation) :
                 total = (total + sign * int(lin_equation[i:j]))
             i = j
           
-        # For cases such 
-        # as: x, -x, +x
+        
         elif (lin_equation[j] == 'x') :
           
             if ((i == j) or lin_equation[j - 1] == '+') :
@@ -36,30 +38,23 @@ def OneVarSolver(lin_equation) :
                 coeff = (coeff + sign * int(lin_equation[i: j]))
             i = j + 1
           
-        # Flip sign once 
-        # '=' is seen
         elif (lin_equation[j] == '=') :
             if (j > i) :
                 total = (total + int(lin_equation[i: j]))
             sign = -1
             i = j + 1
           
-    # There may be a number
-    # left in the end
     if (i < len_of_eqn) :
         total = (total + sign * int(lin_equation[i: len(lin_equation)]))
   
-    # For infinite solutions
+    
     if (coeff == 0 and total == 0) :
         return "Infinite solutions"
   
-    # For no solution
+    
     if (coeff == 0 and total) :
         return "No solution"
   
-    # x = total sum / coeff of x
-    # '-' sign indicates moving
-    # numeric value to right hand side
     ans = -total / coeff
     return int(ans)
 
@@ -70,11 +65,11 @@ def get_index(d, c):
         return -1
     
 def coeffgen(eqn,degree):
-    s=1 #sign
-    n_fg = 0 #number exist
-    eq_fg = 0 #equal flag
-    s_fg = 0 #sign flag
-    letter = '' # store current letter (variable)
+    s=1 
+    n_fg = 0 
+    eq_fg = 0 
+    s_fg = 0 
+    letter = '' 
     coef =''
     curr_idx = 0
     N = degree
@@ -90,7 +85,7 @@ def coeffgen(eqn,degree):
         s_fg = 0
         s = 1
         ls = len(l)
-        k = 0 # position in line str
+        k = 0 
 
         for c in l:
 
@@ -148,6 +143,12 @@ def coeffgen(eqn,degree):
     return mat
             
 def MultiVarSolver(equations,n):
+  """
+  Solves multiple linear equation with n variables
+        :param equations: list of multiple linear equations
+        :param n: Number of equations/ Number of unknowns
+        :return: Solution of these equations
+  """
     resultant= coeffgen(equations,n)
     A=[]
     B=[]
