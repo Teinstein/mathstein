@@ -5,7 +5,9 @@
 
 
 import unittest
-import mathmatcalc
+import context
+import Mathstein.mathmatcalc as mathmatcalc
+
 
 
 class TestMathstein(unittest.TestCase):
