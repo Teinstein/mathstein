@@ -5,7 +5,8 @@
 
 
 import unittest
-import mathroot
+import context
+import Mathstein.mathroot as mathroot
 
 
 class TestMathstein(unittest.TestCase):
