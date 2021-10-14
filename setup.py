@@ -18,7 +18,7 @@ setup(
   name='mathstein',
   version='0.0.1',
   description='It is a comprehensive mathematical library',
-  long_description=open('README.txt').read() + '\n\n' + open('changelog.txt').read(),
+  long_description=open('README.md').read() + '\n\n' + open('changelog.txt').read(),
   url='',  
   author='Teinstein Education',
   author_email='',
